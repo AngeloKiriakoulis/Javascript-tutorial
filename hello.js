@@ -1,7 +1,11 @@
-var myName = "Angelo"
+function nextInLine(arr, item){
 
-myName = 8
+  arr.push(item);
+  return arr.shift();
+}
 
-let ourName = "freeCodeCamp"
+var testArr = [1,2,3,4,5];
 
-const pi = 3.14
+console.log("Before: " + JSON.stringify(testArr));
+console.log(nextInLine(testArr,6));
+console.log("After: " + JSON.stringify(testArr));
