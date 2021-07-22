@@ -1,11 +1,16 @@
-function nextInLine(arr, item){
+function phoneticLookup(val){
+  var result = "";
 
-  arr.push(item);
-  return arr.shift();
+  var lookup = {
+    "alpha": "Adams",
+    "bravo": "Boston",
+    "charlie": "Chicago",
+    "delta": "Denver",
+    "echo": "Easy",
+    "foxtrot": "Frank"
+  };
+  result = lookup[val];
+  return result;
 }
 
-var testArr = [1,2,3,4,5];
-
-console.log("Before: " + JSON.stringify(testArr));
-console.log(nextInLine(testArr,6));
-console.log("After: " + JSON.stringify(testArr));
+console.log(phoneticLookup("charlie"));
