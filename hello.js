@@ -1,16 +1,32 @@
-function phoneticLookup(val){
-  var result = "";
+//Setup
+var contacts = [
+  {
+    "firstName": "Akira",
+    "lastName": "Laine",
+    "number": "054323",
+    "likes": ["Pizza", "Coding", "Brownies"]
+  },
+  {
+    "firstName": "Harry",
+    "lastName": "Potter",
+    "number": "099437",
+    "likes": ["Hogwarts", "Magic", "Hagrid"]
+  },{
+    "firstName": "Sherlock",
+    "lastName": "Holmes",
+    "number": "048734",
+    "likes": ["Intriguing Cases", "Violin"]
+  },
+];
 
-  var lookup = {
-    "alpha": "Adams",
-    "bravo": "Boston",
-    "charlie": "Chicago",
-    "delta": "Denver",
-    "echo": "Easy",
-    "foxtrot": "Frank"
-  };
-  result = lookup[val];
-  return result;
+function lookUpProfile(name, prop){
+  for (var i = 0; i < contacts.length; i++){
+    if(contacts[i].firstName === name){
+      return contacts[i][prop] || "No such property";
+    }
+  }
+  return "No such contact";
 }
 
-console.log(phoneticLookup("charlie"));
+var data = lookUpProfile("Akira", "likes");
+console.log(data);
