@@ -1,5 +1,33 @@
-const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
-const squareList = (arr) => {
-  const squaredIntegers = arr.filter(num => Number.isInteger(num) && num > 0).map(x => x * x);
-  return squaredIntegers;
+class Book {
+  constructor(author) {
+    this._author = author
+  }
+  get writer(){
+    return this._author;
+  }
+  set writer(updatedAuthor){
+    this._author = updatedAuthor;
+  }
 }
+
+function makeClass() {
+  class Thermostat{
+    constructor(temp) {
+      this._temp = 5/9 * (temp - 32);
+    }
+    get temperature(){
+      return this._temp;
+    }
+    set temperature(updatedTemp){
+      this._temp = updatedTemp;
+    }
+  }
+  return Thermostat;
+}
+
+const Thermostat = makeClass();
+const thermos = new Thermostat(76);
+let temp = thermos.temperature;
+thermos.temperature = 26;
+temp = thermos.temperature;
+console.log(temp)
